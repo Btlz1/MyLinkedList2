@@ -7,7 +7,6 @@ using LinkedList;
 
 namespace MyLinkedListExtensions
 {
-    
         public static class MyLinkedListExtensions
         {
             public static void Print<T>(this MyLinkedList<T> list)

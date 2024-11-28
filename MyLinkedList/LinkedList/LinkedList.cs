@@ -35,7 +35,6 @@ namespace LinkedList
 
             if (index == 0)
             {
-                // Вставка в начало списка
                 newNode.Next = this.head;
                 this.head = newNode;
             }
@@ -44,14 +43,12 @@ namespace LinkedList
                 Node<T> current = this.head;
                 for (int i = 0; i < index - 1; i++)
                 {
-                    current = current.Next; // Перейти к узлу перед индексом
+                    current = current.Next; 
                 }
-                // Вставка нового узла
                 newNode.Next = current.Next;
                 current.Next = newNode;
             }
-
-            count++; // Увеличиваем размер списка
+            count++; 
         }
         public void AddLast(T value)
         {
@@ -60,23 +57,22 @@ namespace LinkedList
                 throw new ArgumentNullException(nameof(value));
             }
 
-            Node<T> newNode = new Node<T>(value, null); // Создаем новый узел с переданным значением
+            Node<T> newNode = new Node<T>(value, null);
 
-            if (head == null) // Если список пуст
+            if (head == null) 
             {
-                head = newNode; // Новый узел становится головой списка
+                head = newNode; 
             }
             else
             {
-                Node<T> current = head; // Начинаем с головы списка
-                while (current.Next != null) // Идем до последнего узла
+                Node<T> current = head; 
+                while (current.Next != null) 
                 {
                     current = current.Next;
                 }
-                current.Next = newNode; // Присоединяем новый узел к концу списка
+                current.Next = newNode; 
             }
-
-            count++; // Увеличиваем размер списка
+            count++; 
         }
         public void AddFirst(T value)
         {
@@ -99,9 +95,9 @@ namespace LinkedList
             Node<T> current = this.head;
             for (int i = 0; i < index; i++)
             {
-                current = current.Next; // Перейти к нужному узлу
+                current = current.Next; 
             }
-            return current.Value; // Возвращаем значение узла
+            return current.Value; 
         }
 
         public void Remove(int index)
@@ -122,7 +118,6 @@ namespace LinkedList
                 }
                     current.Next = current.Next.Next;
             }
-
             count--; 
         }
 
@@ -146,12 +141,10 @@ namespace LinkedList
                 current = current.Next;
             }
         }
-
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
         }
-       
     }
 }
     

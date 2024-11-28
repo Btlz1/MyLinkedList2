@@ -39,16 +39,6 @@ class Program
        Console.WriteLine($"Длинна списка: {list.Count}");
        list.Print();
        
-       
-        
-        
-        
-        
-        
         Console.ReadKey();
-
-
     }
-
-    
 }
